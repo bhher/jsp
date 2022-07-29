@@ -100,7 +100,7 @@
 	<!-- 게시판 글 수정 양식 영역 시작 -->
 	<div class="container">
 		<div class="row">
-			<form method="post" action="updateAction.jsp?bbsID=<%= bbsID %>&boardID=<%=boardID%>">
+			<form method="post" encType = "multipart/form-data"  action="updateAction.jsp?bbsID=<%= bbsID %>&boardID=<%=boardID%>">
 				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 					<thead>
 						<tr>
@@ -115,6 +115,9 @@
 						<tr>
 							<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;"
 						> <%=bbs.getBbsContent() %>  </textarea></td>
+						</tr>
+						<tr>
+							<td><input type="file" name="fileName"></td>
 						</tr>
 					</tbody>
 				</table>

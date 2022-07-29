@@ -76,12 +76,14 @@
 					script.println("</script>");
 				// 글쓰기가 정상적으로 실행되면 알림창을 띄우고 게시판 메인으로 이동한다
 				}else {
-					PrintWriter script = response.getWriter();
+					
+					String real ="C:\\eclipse\\work\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp1\\wtpwebapps\\BBS\\bbsupload";
 					if(fileName != null){
 						File oldFile = new File(realFolder+"\\"+fileName);
 						File newFile = new File(realFolder+"\\"+(bbsDAO.getNext()-1)+"사진.jpg");
 						oldFile.renameTo(newFile);
 					}
+					PrintWriter script = response.getWriter();
 					script.println("<script>");
 					script.println("alert('글쓰기 성공')");
 					script.println("location.href='bbs.jsp?boardID="+boardID+"'");
